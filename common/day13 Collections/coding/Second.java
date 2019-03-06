@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Second {
     public static void main(String[] args) {
-        //String str ="hi my self sakshi";
+       
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
         System.out.println("----Printing original string----");
