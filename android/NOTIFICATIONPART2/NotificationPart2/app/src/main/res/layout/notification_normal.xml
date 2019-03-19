@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="303dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:gravity="center"
+        android:hint="chan-noti1"
+        android:inputType="text"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="303dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:gravity="center"
+        android:hint="chan-noti2"
+        android:inputType="text"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="158dp"
+        android:layout_marginRight="158dp"
+        android:onClick="sendOnChannel"
+        android:text="channel1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="91dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginRight="160dp"
+        android:onClick="sendOnChanne2"
+        android:text="channel2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="94dp"
+        android:text="startperiodic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="84dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="280dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginRight="73dp"
+        android:text="stop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+</android.support.constraint.ConstraintLayout>
