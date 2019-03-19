@@ -25,6 +25,8 @@ public class Notification_normal extends AppCompatActivity  {
     private static EditText editText1;
     private static Button channel1;
     private static Button channel2;
+    private static Button start;
+
 
 
     @Override
@@ -144,6 +146,7 @@ public class Notification_normal extends AppCompatActivity  {
 
 
     }
+
 }
 
 
