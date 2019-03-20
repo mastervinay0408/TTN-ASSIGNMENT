@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.notificationpart2.notification.NotificationNormal;
+import com.example.notificationpart2.workmanager.WorkManagerExample;
+
 import androidx.work.OneTimeWorkRequest;
 import androidx.work.WorkManager;
 // this is the main activity
@@ -28,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
        button.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               Intent intent = new Intent(MainActivity.this,Notification_normal.class);
+               Intent intent = new Intent(MainActivity.this, NotificationNormal.class);
                startActivity(intent);
            }
        });

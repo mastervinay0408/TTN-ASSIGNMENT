@@ -1,7 +1,6 @@
-package com.example.notificationpart2;
+package com.example.notificationpart2.notification;
 
 import android.app.Notification;
-import android.app.NotificationManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,32 +11,36 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.notificationpart2.R;
+
 import java.util.Timer;
 
-import static com.example.notificationpart2.App.CHANNEL_1_ID;
-import static com.example.notificationpart2.App.CHANNEL_2_ID;
+import static com.example.notificationpart2.channelcreation.ChannelCreation.CHANNEL_1_ID;
 
-public class Notification_normal extends AppCompatActivity  {
+public class NotificationNormal extends AppCompatActivity {
     //creating NotificationManagerCompat istead of NotificationManager as NotificationManagerCompat
     //gives Compatibility library for NotificationManager with fallbacks for older platforms.
-    private static NotificationManagerCompat notificationManagerCompat;
-    private static EditText editText;
-    private static EditText editText1;
-    private static Button channel1;
-    private static Button channel2;
-    private static Button start;
-
+    private NotificationManagerCompat notificationManagerCompat;
+    private EditText editText;
+    private EditText editText1;
+    private Button channel1;
+    private Button channel2;
+    private Button start;
+    private String tittle;
+    private String message;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.notification_normal);
-        notificationManagerCompat = NotificationManagerCompat.from(this);
         editText = findViewById(R.id.editText);
         editText1 = findViewById(R.id.editText2);
         channel1 = findViewById(R.id.button3);
         channel2 = findViewById(R.id.button4);
+
+        tittle = editText.getText().toString();
+        message = editText1.getText().toString();
         sendOnChannel();
         sendOnChanne2();
         onclickstart();
@@ -45,25 +48,21 @@ public class Notification_normal extends AppCompatActivity  {
     }
 
 
-
-    static void sendOnChannel() {
-        final String tittle = editText.getText().toString();
-        final String message = editText1.getText().toString();
+    void sendOnChannel() {
+//        final String tittle = editText.getText().toString();
+//        final String message = editText1.getText().toString();
 
         channel1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               call1(v.getContext());
+                call1(v.getContext());
             }
         });
     }
 
+    public void call1(Context context) {
 
-
-    public static void call1(Context context){
-//        if()
-        String tittle = editText.getText().toString();
-        String message = editText1.getText().toString();
+        notificationManagerCompat = NotificationManagerCompat.from(context);
         //creating Notification and passing channel into them and if the version is lower than oreo
         //then CHANNEL_id is not passed through  it
         Notification notification = new NotificationCompat.Builder(context, CHANNEL_1_ID)
@@ -79,25 +78,14 @@ public class Notification_normal extends AppCompatActivity  {
     }
 
 
-// this method is used for Work manager which is call when the dowork function is called
-    // in dowork we passed work() method.
-    public static void work(Context context){
-        notificationManagerCompat = NotificationManagerCompat.from(context);
-        Notification notification = new NotificationCompat.Builder(context, CHANNEL_1_ID)
-                .setSmallIcon(R.drawable.ic_one)
-                .setPriority(NotificationCompat.PRIORITY_HIGH)
-                .setContentTitle("this is work manager")
-                .setContentText("this is text")
-                .build();
-        notificationManagerCompat.notify(1, notification);
-    }
+    /*this method is used for Work manager which is call when the dowork function is called
+    in dowork we passed work() method.
+    */
 
 
 
-
-
-//method for calling button2
-    public static void sendOnChanne2() {
+    //method for calling button2
+    public void sendOnChanne2() {
 
 
         channel2.setOnClickListener(new View.OnClickListener() {
@@ -110,25 +98,18 @@ public class Notification_normal extends AppCompatActivity  {
 
     }
 
-
-    public static void call2(Context context){
-        final String tittle = editText.getText().toString();
-        final String message = editText1.getText().toString();
+    public void call2(Context context) {
+        notificationManagerCompat = NotificationManagerCompat.from(context);
+//        final String tittle = editText.getText().toString();
+//        final String message = editText1.getText().toString();
         Notification notification = new NotificationCompat.Builder(context, CHANNEL_1_ID)
                 .setSmallIcon(R.drawable.ic_one)
-                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setPriority(NotificationCompat.PRIORITY_LOW)
                 .setContentTitle("this is notification2")
                 .setContentText(message)
                 .build();
         notificationManagerCompat.notify(2, notification);
     }
-
-
-
-
-
-
-
 
 
 // this is a method for calling alternative channel notification after every-one minute
@@ -139,7 +120,7 @@ public class Notification_normal extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
                 Timer t1 = new Timer();
-                t1.schedule(new Timer1(v.getContext()), 0, 7000);
+                t1.schedule(new PeriodicCallByTimer(v.getContext()), 0, 7000);
 
             }
         });

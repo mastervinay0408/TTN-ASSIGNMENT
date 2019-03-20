@@ -1,4 +1,4 @@
-package com.example.notificationpart2;
+package com.example.notificationpart2.channelcreation;
 
 import android.app.Application;
 import android.app.Notification;
@@ -6,9 +6,10 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
-//this class is used for creating channels which extends Application as it creates inside Application(manifest)
 
-public class App extends Application {
+/*this class is used for creating channels which extends Application as it creates inside Application(manifest)*/
+
+public class ChannelCreation extends Application {
 //creating them final so that it cannot be changed further
     public static final String CHANNEL_1_ID="channel1";
     public static final String CHANNEL_2_ID="channel2";

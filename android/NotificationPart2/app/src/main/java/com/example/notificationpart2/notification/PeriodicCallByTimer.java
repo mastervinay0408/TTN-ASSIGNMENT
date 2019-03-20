@@ -1,28 +1,29 @@
-package com.example.notificationpart2;
+package com.example.notificationpart2.notification;
 
 import android.content.Context;
 import android.util.Log;
 
-import java.sql.Time;
+import com.example.notificationpart2.notification.NotificationNormal;
+
 import java.util.TimerTask;
 
 
-//class used for calling notification alternatively
-public class Timer1 extends TimerTask {
+/*class used for calling notification alternatively*/
+public class PeriodicCallByTimer extends TimerTask {
 
     Context context;
 
-    public Timer1(Context context){
+    public PeriodicCallByTimer(Context context){
         this.context = context;
     }
         int counter=1;
-
+    NotificationNormal n1= new NotificationNormal();
     @Override
     public void run() {
 
         if(counter==1)
         {
-            Notification_normal.call1(this.context);
+            n1.call1(this.context);
             Log.v("vinay", "1");
             counter=0;
 
@@ -30,7 +31,7 @@ public class Timer1 extends TimerTask {
         }
         else if(counter==0)
         {
-          Notification_normal.call2(this.context);
+          n1.call2(this.context);
             Log.v("vinay", "2");
             counter=1;
         }
