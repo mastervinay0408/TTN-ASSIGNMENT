@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ed1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login">
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="166dp"
+        android:layout_marginEnd="162dp"
+        android:layout_marginRight="162dp"
+        android:text="Logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv3" />
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="164dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="116dp"
+        android:layout_marginRight="116dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="155dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="208dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginRight="128dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="152dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="336dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginRight="128dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
