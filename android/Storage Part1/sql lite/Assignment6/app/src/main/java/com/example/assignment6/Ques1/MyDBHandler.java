@@ -23,6 +23,7 @@ public class MyDBHandler extends SQLiteOpenHelper {
         return instance;
     }
 
+
     public MyDBHandler(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }

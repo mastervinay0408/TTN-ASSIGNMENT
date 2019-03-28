@@ -57,9 +57,9 @@ public class RecyclerDBAdapter extends RecyclerView.Adapter<RecyclerDBAdapter.Cu
                 nameEditText=dialogView.findViewById(R.id.nameEditText);
                 addressEditText=dialogView.findViewById(R.id.addressEditText);
                 phoneEditText=dialogView.findViewById(R.id.phoneEditText);
-                nameEditText.setHint(data.getName());
-                phoneEditText.setHint(data.getPhone());
-                addressEditText.setHint(data.getAddress());
+                nameEditText.setText(data.getName());
+                phoneEditText.setText(data.getPhone());
+                addressEditText.setText(data.getAddress());
                 builder.setView(dialogView);
                 builder.setTitle("Edit Employee");
                 builder.setPositiveButton("Save", new DialogInterface.OnClickListener() {
